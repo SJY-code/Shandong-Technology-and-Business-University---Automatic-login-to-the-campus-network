@@ -19,10 +19,12 @@ toaster = ToastNotifier(
     # icon_path="icon.ico"
 )
 
+## 日志配置 将日志文件保存在脚本所在目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+log_path = os.path.join(script_dir, "ALNC.log")
 
-# 日志配置
 logging.basicConfig(
-    filename="NetLog.log",
+    filename=log_path,
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     encoding="utf-8",
